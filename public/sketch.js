@@ -23,6 +23,6 @@ function myT(){
    textAlign('CENTER')
    textSize(200)
    text("lololololololo",300,300)
-   
+   text("hahahhahah",300,400)
 }
 
