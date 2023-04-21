@@ -34,7 +34,7 @@ const num = 1000;
 const noiseScale = 0.01/2;
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(innerWidth, innerHeight);
   for(let i = 0; i < num; i ++) {
     particles.push(createVector(random(width), random(height)));
   }
