@@ -1,7 +1,7 @@
 document.body.style.margin   = 0
 document.body.style.overflow = `hidden`
 
-const cnv 
+ 
 
 let x= 0;
 
@@ -16,15 +16,15 @@ function  draw () {
    fill (255, random(255),random(255))
    ellipse (mouseX,mouseY,100,100)
 
-   //myT();
+   myT();
    
 }
 
-/*function myT(){
+function myT(){
    fill('black')
    textAlign('CENTER')
    textSize(200)
    text("lololololololo",300,300)
    text("hahahhahah",300,400)
-}*/ 
+}
 
