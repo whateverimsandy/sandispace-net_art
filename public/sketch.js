@@ -29,25 +29,31 @@ function myT(){
 } */
 
 let particles = [];
-const num = 1000;
+const num = 200;
 
-const noiseScale = 0.01/2;
+const noiseScale = 0.09/2;
 
 function setup() {
   createCanvas(innerWidth, innerHeight);
+  frameRate(1);
+  
+  
   for(let i = 0; i < num; i ++) {
     particles.push(createVector(random(width), random(height)));
   }
   
-  stroke(255);
-  // For a cool effect try uncommenting this line
-  // And comment out the background() line in draw
-  // stroke(255, 50);
+  stroke(random(255),random(255),255);
+ 
   clear();
+  background('black'); 
 }
 
 function draw() {
-  background(0, 10);
+   
+ // background('black'); 
+  //background gradient testing
+ 
+
   for(let i = 0; i < num; i ++) {
     let p = particles[i];
     point(p.x, p.y);
@@ -62,7 +68,7 @@ function draw() {
   }
 }
 
-function mouseReleased() {
+function mouseDragged() {
   noiseSeed(millis());
 }
 
