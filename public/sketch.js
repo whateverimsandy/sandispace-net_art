@@ -28,31 +28,61 @@ function myT(){
    text("hahahhahah",300,400)
 } */
 
+// declare an empty array to store the particles
 let particles = [];
+
+// declare a variable 'river'
+let river;
+
+//declare a constant variable 'num' and assign value of 200
 const num = 200;
 
+
+//declare a constant variable 'num' and assign value of 0.09/2
 const noiseScale = 0.09/2;
+
+//declare function preload() to load a sound file with loadSound()
+function preload (){
+  river = loadSound ("river.mp3")
+}
 
 function setup() {
   createCanvas(innerWidth, innerHeight);
-  frameRate(1);
-  
-  
+  frameRate(5);
   for(let i = 0; i < num; i ++) {
     particles.push(createVector(random(width), random(height)));
   }
   
-  stroke(random(255),random(255),255);
- 
+  stroke('blue'); 
   clear();
   background('black'); 
 }
 
 function draw() {
    
- // background('black'); 
-  //background gradient testing
  
+ if (mouseIsPressed){
+    if ( river.isPlaying() ==false){
+      river.loop()
+    }
+  }
+  
+ if(mouseX <=100 & mouseY <=100){
+    
+    stroke('red')
+    
+  }else if (mouseX >=300 & mouseY >=300){
+    
+    stroke ('blue')    
+    
+  }else if(mouseX > 500){
+    
+    stroke ('yellow')
+    strokeWeight(1.5)
+    
+  }else { 
+     stroke ('purple')
+  }
 
   for(let i = 0; i < num; i ++) {
     let p = particles[i];
@@ -68,11 +98,10 @@ function draw() {
   }
 }
 
-function mouseDragged() {
-  noiseSeed(millis());
-}
 
 function onScreen(v) {
   return v.x >= 0 && v.x <= width && v.y >= 0 && v.y <= height;
 }
+
+
 
