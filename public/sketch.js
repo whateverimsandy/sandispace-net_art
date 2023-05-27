@@ -76,7 +76,7 @@ function myLoop(){
   
 }
 
-function waver () {
+function waver() {
 
   this.x = 0;
   this.y = 0;
@@ -104,7 +104,6 @@ function waver () {
     this.colorer();
   }
     
-  // image(extraCanvas,0,0)
   extraCanvas.push();
   extraCanvas.translate(width/2,height/2);
   extraCanvas.rotate(TWO_PI*this.theta);
@@ -115,19 +114,15 @@ function waver () {
   extraCanvas.beginShape();
 
     let sz = map(noise(frameCount*0.1),0,1,10,this.len);
-    let rgap = map(noise(frameCount*0.01),0,1,
-                  3,15);
+    let rgap = map(noise(frameCount*0.01),0,1,3,15);
     for (let x = 0; x < sz; x += rgap){
-      this.y = map(noise(xoff,this.yoff),0,1,
-                   -this.s,this.s);
+      this.y = map(noise(xoff,this.yoff),0,1, -this.s,this.s);
       extraCanvas.vertex(x,this.y);
-
       xoff += 0.05;
     }
  
     extraCanvas.endShape();
     extraCanvas.pop();
-   
     extraCanvas.push();
     extraCanvas.translate(width/2,height/2);
     extraCanvas.rotate(-TWO_PI*this.theta);
@@ -138,8 +133,7 @@ function waver () {
     extraCanvas.beginShape();
     
     for (let x = 0; x < sz; x += rgap){
-      this.y = map(noise(xoff,this.yoff),0,1,
-                   -this.s,this.s);
+      this.y = map(noise(xoff,this.yoff),0,1,-this.s,this.s);
       extraCanvas.vertex(x,this.y);
       xoff += 0.05;
     }
