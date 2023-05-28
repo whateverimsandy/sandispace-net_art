@@ -6,8 +6,13 @@ let yoff = 0;
 let shape;
 let zoff = 0;
 let extraCanvas;
-let sad;
+let audio;
 const flock = [];
+
+function preload (){
+  audio = loadSound("sad audio.mp3")
+}
+
 
 function setup () {
   createCanvas (innerWidth, innerHeight);
@@ -17,26 +22,22 @@ function setup () {
   for (let i = 0; i < 200; i++) {
     flock.push(new Boid());
   }
- // background('black');  
+   
 }
 
-function preload (){
-  sad = loadSound ("sad audio.mp3")
-}
 
 function draw() {
-
-  if (mouseIsPressed){
-    if ( sad.isPlaying() ==false){
-      sad.loop()
-    }
-  } 
-
   background('black');  
   myLoop();
   image(extraCanvas, 0, 0)  
   fly();
   myMonarch();  
+
+  if (mouseIsPressed){
+    if (audio.isPlaying() ==false){
+      audio.loop()
+    }
+  } 
 }
 
 function myMonarch(){   
