@@ -9,8 +9,8 @@ let extraCanvas;
 let audio;
 const flock = [];
 
-function preload (){
-  audio = loadSound ('sadaudio.mp3')
+function preload () {
+  audio = loadSound ('sadaudio.mp3');
 }
 
 
