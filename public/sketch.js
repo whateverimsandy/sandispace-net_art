@@ -6,6 +6,7 @@ let yoff = 0;
 let shape;
 let zoff = 0;
 let extraCanvas;
+let sad;
 const flock = [];
 
 function setup () {
@@ -19,7 +20,18 @@ function setup () {
  // background('black');  
 }
 
+function preload (){
+  sad = loadSound ("sad audio.mp3")
+}
+
 function draw() {
+
+  if (mouseIsPressed){
+    if ( sad.isPlaying() ==false){
+      sad.loop()
+    }
+  } 
+
   background('black');  
   myLoop();
   image(extraCanvas, 0, 0)  
