@@ -10,7 +10,7 @@ let audio;
 const flock = [];
 
 function preload (){
-  audio = loadSound("sad audio.mp3")
+  audio = loadSound ('sadaudio.mp3')
 }
 
 
